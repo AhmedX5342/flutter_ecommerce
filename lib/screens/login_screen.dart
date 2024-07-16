@@ -1,5 +1,5 @@
-import 'package:ecommerce/logic/cubit.dart';
-import 'package:ecommerce/logic/states.dart';
+import 'package:ecommerce/logic/auth_cubit.dart';
+import 'package:ecommerce/logic/auth_states.dart';
 import 'package:ecommerce/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
