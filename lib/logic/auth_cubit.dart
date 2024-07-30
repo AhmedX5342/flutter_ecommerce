@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:ecommerce/logic/auth_states.dart';
+import 'package:ecommerce/logic/home_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,7 +37,8 @@ class AuthCubit extends Cubit<AuthStates>{
       final response = await http.post(url,body: body, headers: headers);
       var JsonDecode = json.decode(response.body);
       if(JsonDecode['status']==true){
-        print('success ${response.body}');
+        token = JsonDecode['data']['token'];
+        print('success ${JsonDecode['data']['token']}');
         Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
         emit(AuthSuccess());
       }else{
