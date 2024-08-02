@@ -1,4 +1,4 @@
-class ProductsModel {
+class FavoritesModel {
   int? id;
   String? name;
   String? image;
@@ -6,7 +6,7 @@ class ProductsModel {
   num? price;
   bool? inFavorites;
 
-  ProductsModel.fromJson(Map<String,dynamic>json){
+  FavoritesModel.fromJson(Map<String,dynamic>json){
     id = json['id'];
     name = json['name'];
     price = json['price'];

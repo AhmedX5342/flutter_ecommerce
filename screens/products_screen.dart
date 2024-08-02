@@ -27,7 +27,8 @@ class ProductsScreen extends StatelessWidget {
                           color: Colors.grey,
                           child: Row(
                             children: [
-                              Image.network(cubit.products[index].image!, width: 100, height: 100, fit: BoxFit.cover),
+                              // cubit.products[index].image!=null?Image.network(cubit.products[index].image!, width: 100, height: 100, fit: BoxFit.cover): Container(color: Colors.grey.shade200),
+                              Image.network(cubit.products[index].image!, width: 100, height: 100),
                               const SizedBox(width: 10),
                               Expanded(
                                 child: Column(
@@ -38,9 +39,9 @@ class ProductsScreen extends StatelessWidget {
                                       children: [
                                         IconButton(
                                             onPressed: (){
-
+                                              cubit.AddFavorites(context, cubit.products[index].id!, id);
                                             },
-                                            icon: const Icon(Icons.favorite, color: Colors.red,)
+                                            icon: Icon(Icons.favorite, color:cubit.products[index].inFavorites==true? Colors.red: Colors.grey,)
                                         ),
                                         IconButton(
                                             onPressed: (){
